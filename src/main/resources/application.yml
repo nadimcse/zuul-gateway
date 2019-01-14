@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: gateway
+
+zuul:
+    prefix: /api
+    ignoredServices: gateway
+    routes:
+        hello:
+            path: /**
+            serviceId: hello
+            stripPrefix: true
